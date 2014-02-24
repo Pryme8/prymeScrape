@@ -1,0 +1,1 @@
+$('body').prepend('<div class="botWrap" style="position:absolute;top:0px;left:0px;width:100%;height:3em;font-size:12px;"></div>')

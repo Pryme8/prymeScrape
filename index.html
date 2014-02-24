@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+2014 web scrapper Designed for use with yellowpages.com
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="jquery-2.0.3.min.js"></script>
+    </head>
+    <body>
+<script>
+var zips = new Array;
+$.get('zipcodes.csv',function(data){
+    var dataStr = new String(data);
+    var lines = dataStr.split('\n');
+	
+	    for(i=0; i<lines.length; i++)
+    {
+	zips[i] = lines[i].substr(0, lines[i].indexOf(','));
+  	}
+	
+	alert(zips);
+
+});
+</script>
+    </body>
+</html>
