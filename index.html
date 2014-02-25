@@ -10,19 +10,28 @@
     </head>
     <body>
 <script>
-var zips = new Array;
-$.get('zipcodes.csv',function(data){
-    var dataStr = new String(data);
-    var lines = dataStr.split('\n');
+    
+    var zips = new Array();
+    
+   $.get("zipcodes.csv", function(data) {
+            var temp = new String(data);
+             
+            var dataStr = temp.replace(/"/g, "");
+            
+            var lines = dataStr.split('\n');
 	
 	    for(i=0; i<lines.length; i++)
-    {
+        {
 	zips[i] = lines[i].substr(0, lines[i].indexOf(','));
   	}
 	
-	alert(zips);
+    
+    document.write(zips.join(","));
+    
+    }, "text");
+    
+    
 
-});
 </script>
     </body>
 </html>
